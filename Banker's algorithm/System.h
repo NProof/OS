@@ -13,7 +13,6 @@ public :
 	void set(Process* p, Resource* r, unsigned int max, unsigned int allocation){
 		p->max[r] = max;
 		p->allocation[r] = allocation;
-		p->need[r] = max - allocation;
 		r->beRequest(allocation);
 		processSet.insert(p);
 		resourceSet.insert(r);
