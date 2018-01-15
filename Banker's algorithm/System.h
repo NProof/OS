@@ -22,7 +22,7 @@ public :
 	
 	bool safety(); // Safety Algorithm
 	bool request(Process* p, std::map<Resource*, unsigned int> requisitions); //Resource-Request Algorithm
-	bool isDeadlock(); //Deadlock-Detection Algorithm
+	// bool isDeadlock(); //Deadlock-Detection Algorithm // unable
 };
 
 bool System::safety(){
@@ -92,7 +92,7 @@ bool System::request(Process* p, std::map<Resource*, unsigned int> requisitions)
 	}	
 }
 
-bool System::isDeadlock(){
+/* bool System::isDeadlock(){
 	std::map<Resource*, unsigned int> work ;
 	std::map<Process*, bool> finish ;
 	for(std::set<Resource*>::iterator rit=resourceSet.begin(); rit!=resourceSet.end(); ++rit){
@@ -113,7 +113,7 @@ bool System::isDeadlock(){
 	bool exists;
 	do {
 		exists = false;
-		/*  */
+		// 
 	} while(exists);
 	for(std::set<Process*>::iterator pit=processSet.begin(); pit!=processSet.end(); ++pit){
 		if(!finish[*pit]){
@@ -121,6 +121,6 @@ bool System::isDeadlock(){
 		}
 	}
 	return true;
-}
+} */
 
 #endif
