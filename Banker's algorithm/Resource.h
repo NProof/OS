@@ -5,6 +5,7 @@
 
 class Resource{
 	unsigned int instances;
+	unsigned int available;
 	std::map<Process*, unsigned int> max;
 	
 public :
