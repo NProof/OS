@@ -19,8 +19,7 @@ public :
 	}
 	
 	bool safety(); // Safety Algorithm
-	
-	//Resource-Request Algorithm
+	void request(Process* p, std::map<Resource*, unsigned int> requisitions); //Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
 };
 
