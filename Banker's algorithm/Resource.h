@@ -8,6 +8,7 @@ class Resource{
 public :
 	Resource(unsigned int instances){
 		this->instances = instances;
+		available = instances;
 	}
 };
 
