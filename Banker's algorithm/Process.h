@@ -5,9 +5,9 @@
 #include <map>
 
 class Process{
-	std::map<Resource*, unsigned int> *allocation;
-	std::map<Resource*, unsigned int> *need;
-	std::map<Resource*, unsigned int> *max;
+	std::map<Resource*, unsigned int> allocation;
+	std::map<Resource*, unsigned int> need;
+	std::map<Resource*, unsigned int> max;
 public :
 	Process(){}
 };
