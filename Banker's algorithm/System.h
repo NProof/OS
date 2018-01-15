@@ -22,7 +22,7 @@ public :
 	
 	bool safety(); // Safety Algorithm
 	bool request(Process* p, std::map<Resource*, unsigned int> requisitions); //Resource-Request Algorithm
-	bool isDeadlock() //Deadlock-Detection Algorithm
+	bool isDeadlock(); //Deadlock-Detection Algorithm
 };
 
 bool System::safety(){
