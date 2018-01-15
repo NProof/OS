@@ -20,6 +20,9 @@ public :
 	}
 	
 	//Safety Algorithm
+	bool safety(){
+		
+	}
 	//Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
 	
