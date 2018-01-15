@@ -2,6 +2,8 @@
 #define SYSTEM_H
 
 #include <set>
+#include <map>
+#include <string>
 #include "Process.h"
 #include "Resource.h"
 
@@ -19,7 +21,7 @@ public :
 	}
 	
 	bool safety(); // Safety Algorithm
-	void request(Process* p, std::map<Resource*, unsigned int> requisitions); //Resource-Request Algorithm
+	bool request(Process* p, std::map<Resource*, unsigned int> requisitions); //Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
 };
 
@@ -62,8 +64,32 @@ bool System::safety(){
 	return true;
 }
  
-void System::request(Process* p, std::map<Resource*, unsigned int> requisitions){
-	
+bool System::request(Process* p, std::map<Resource*, unsigned int> requisitions){
+	try{
+		for(std::map<Resource*, unsigned int>::iterator rit=requisitions.begin(); rit!=requisitions.end(); ++rit){
+			if(!(rit->second <= p->need(rit->first)))
+				throw std::string("exceeded its maximum claim");
+		}
+		for(std::map<Resource*, unsigned int>::iterator rit=requisitions.begin(); rit!=requisitions.end(); ++rit){
+			if(!(rit->second <= rit->first->getAvailable()))
+				return false;
+		}
+		for(std::map<Resource*, unsigned int>::iterator it=requisitions.begin(); it!=requisitions.end(); ++it){
+			it->first->beRequest(it->second);
+			p->allocation[it->first] += it->second;
+		}
+		if(!safety()){
+			for(std::map<Resource*, unsigned int>::iterator it=requisitions.begin(); it!=requisitions.end(); ++it){
+				it->first->beRelease(it->second);
+				p->allocation[it->first] -= it->second;
+			}
+			return false;
+		}
+		return true;
+	}
+	catch(const std::string error_message){
+		std::cout << error_message << std::endl ;
+	}	
 }
 
 #endif
