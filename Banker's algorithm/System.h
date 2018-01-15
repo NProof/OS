@@ -10,11 +10,6 @@ public :
 	std::set<Process*> processSet;
 	std::set<Resource*> resourceSet;
 	
-	System(){}
-	//Safety Algorithm
-	//Resource-Request Algorithm
-	//Deadlock-Detection Algorithm
-	
 	void set(Process* p, Resource* r, unsigned int max, unsigned int allocation){
 		p->max[r] = max;
 		p->allocation[r] = allocation;
@@ -23,6 +18,11 @@ public :
 		processSet.insert(p);
 		resourceSet.insert(r);
 	}
+	
+	//Safety Algorithm
+	//Resource-Request Algorithm
+	//Deadlock-Detection Algorithm
+	
 };
 
 #endif
