@@ -1,8 +1,6 @@
 #ifndef RESOURCE_H
 #define RESOURCE_H
 
-#include "Process.h"
-
 class Resource{
 	unsigned int instances;
 	unsigned int available;
