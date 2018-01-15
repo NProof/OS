@@ -31,8 +31,10 @@ int main(int argc, char **argv){
 	S.set(P4, A, 4, 0);
 	S.set(P4, B, 3, 0);
 	S.set(P4, C, 3, 2);
-	cout << A->getAvailable() << endl;
-	cout << B->getAvailable() << endl;
-	cout << C->getAvailable() << endl;
+	cout << std::boolalpha << S.safety() << endl; // true
+	std::map<Resource*, unsigned int> requisitions1;
+	requisitions1[A] = 1;
+	requisitions1[C] = 2;
+	cout <<  S.request(P1, requisitions1) << endl; // true
 	return 0;
 }
