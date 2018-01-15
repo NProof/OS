@@ -2,6 +2,7 @@
 #define RESOURCE_H
 
 class Resource{
+	unsigned int instances;
 	unsigned int available;
 };
 
