@@ -22,7 +22,7 @@ public :
 	
 	bool safety(); // Safety Algorithm
 	bool request(Process* p, std::map<Resource*, unsigned int> requisitions); //Resource-Request Algorithm
-	//Deadlock-Detection Algorithm
+	bool isDeadlock() //Deadlock-Detection Algorithm
 };
 
 bool System::safety(){
@@ -90,6 +90,10 @@ bool System::request(Process* p, std::map<Resource*, unsigned int> requisitions)
 	catch(const std::string error_message){
 		std::cout << error_message << std::endl ;
 	}	
+}
+
+bool System::isDeadlock(){
+	
 }
 
 #endif
