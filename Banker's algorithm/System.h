@@ -26,9 +26,9 @@ public :
 			work[*it] = (*it)->getAvailable();
 		}
 	}
+	
 	//Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
-	
 };
 
 #endif
