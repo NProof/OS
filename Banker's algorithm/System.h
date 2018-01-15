@@ -7,13 +7,13 @@
 
 class System{
 public :
-	//Safety Algorithm
-	//Resource-Request Algorithm
-	//Deadlock-Detection Algorithm
 	std::set<Process*> processSet;
 	std::set<Resource*> resourceSet;
 public :
 	System(){}
+	//Safety Algorithm
+	//Resource-Request Algorithm
+	//Deadlock-Detection Algorithm
 };
 
 #endif
