@@ -6,8 +6,9 @@
 
 class Process{
 	std::map<Resource*, unsigned int> allocation;
-	std::map<Resource*, unsigned int> max;
 	std::map<Resource*, unsigned int> need;
+public :
+	Process(){}
 };
 
 #endif
