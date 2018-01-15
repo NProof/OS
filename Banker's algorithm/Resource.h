@@ -11,6 +11,10 @@ public :
 		available = instances;
 	}
 	
+	unsigned int getAvailable(){
+		return available;
+	}
+	
 	void beRequest(unsigned int assigned){
 		available -= assigned;
 	}

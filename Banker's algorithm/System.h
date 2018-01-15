@@ -21,7 +21,10 @@ public :
 	
 	//Safety Algorithm
 	bool safety(){
-		
+		std::map<Resource*, unsigned int> work ;
+		for(std::set<Resource*>::iterator it=resourceSet.begin(); it!=resourceSet.end(); ++it){
+			work[*it] = (*it)->getAvailable();
+		}
 	}
 	//Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
