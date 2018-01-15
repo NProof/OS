@@ -93,7 +93,34 @@ bool System::request(Process* p, std::map<Resource*, unsigned int> requisitions)
 }
 
 bool System::isDeadlock(){
-	
+	std::map<Resource*, unsigned int> work ;
+	std::map<Process*, bool> finish ;
+	for(std::set<Resource*>::iterator rit=resourceSet.begin(); rit!=resourceSet.end(); ++rit){
+		work[*rit] = (*rit)->getAvailable();
+	}
+	for(std::set<Process*>::iterator pit=processSet.begin(); pit!=processSet.end(); ++pit){
+		bool iszero;
+		std::map<Resource*, unsigned int> temp = (*pit)->allocation;
+		for(std::map<Resource*, unsigned int>::iterator rit=temp.begin(); rit!=temp.end(); ++rit){
+			if(rit->second != 0){
+				finish[*pit] = iszero = false;
+				break;
+			}
+		}
+		if(!iszero)
+			finish[*pit] = true;
+	}
+	bool exists;
+	do {
+		exists = false;
+		/*  */
+	} while(exists);
+	for(std::set<Process*>::iterator pit=processSet.begin(); pit!=processSet.end(); ++pit){
+		if(!finish[*pit]){
+			return false;
+		}
+	}
+	return true;
 }
 
 #endif
