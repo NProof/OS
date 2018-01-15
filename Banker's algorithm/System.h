@@ -12,6 +12,15 @@ public :
 	//Deadlock-Detection Algorithm
 	std::set<Process*> processSet;
 	std::set<Resource*> resourceSet;
+public :
+	System(){}
+	System(std::set<Resource*> resourceSet){
+		this->resourceSet = resourceSet;
+	}
+	System(std::set<Resource*> resourceSet, std::set<Process*>){
+		this->resourceSet = resourceSet;
+		this->processSet = processSet;
+	}
 };
 
 #endif
