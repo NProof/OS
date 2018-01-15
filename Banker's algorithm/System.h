@@ -61,5 +61,9 @@ bool System::safety(){
 	}
 	return true;
 }
+ 
+void System::request(Process* p, std::map<Resource*, unsigned int> requisitions){
+	
+}
 
 #endif
