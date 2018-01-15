@@ -22,8 +22,10 @@ public :
 	//Safety Algorithm
 	bool safety(){
 		std::map<Resource*, unsigned int> work ;
+		std::map<Resource*, bool> finish ;
 		for(std::set<Resource*>::iterator it=resourceSet.begin(); it!=resourceSet.end(); ++it){
 			work[*it] = (*it)->getAvailable();
+			finish[*it] = false;
 		}
 	}
 	
