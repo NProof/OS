@@ -6,10 +6,12 @@
 #include "Resource.h"
 
 class System{
+public :
 	//Safety Algorithm
 	//Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
-	std::set<Process> P;
+	std::set<Process*> processSet;
+	std::set<Resource*> resourceSet;
 };
 
 #endif
