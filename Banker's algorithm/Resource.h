@@ -10,6 +10,14 @@ public :
 		this->instances = instances;
 		available = instances;
 	}
+	
+	void beRequest(unsigned int assigned){
+		available -= assigned;
+	}
+	
+	void beRelease(unsigned int released){
+		available += released;
+	}
 };
 
 #endif
