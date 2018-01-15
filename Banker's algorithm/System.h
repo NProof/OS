@@ -14,6 +14,9 @@ public :
 	//Safety Algorithm
 	//Resource-Request Algorithm
 	//Deadlock-Detection Algorithm
+	void set(Process* p, Resource* r, unsigned int max, unsigned int allocation){
+		
+	}
 };
 
 #endif
